@@ -1,0 +1,65 @@
+# Config for zsh.
+#
+#  _______| |__  _ __ ___
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__
+# /___|___/_| |_|_|  \___|
+#
+# Set up promt and colors.
+autoload -U colors && colors
+stty stop undef
+setopt interactive_comments
+setopt autocd
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# Enable auto complete.
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+
+# Enable vi mode.
+bindkey -v
+export KEYTIMEOUT=1
+# Set up vim keys.
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -v '^?' backward-delete-char
+
+# Use Ctrl-v to open ranger
+bindkey -s '^o' '^uranger\n'
+
+# Use Ctrl-t to open transmission-remote-cli.
+bindkey -s '^t' '^utremc\n'
+
+# Extra colors.
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# Aliases
+alias ls="ls --color=auto"
+alias vim="nvim"
+alias BAT="upower -i /org/freedesktop/UPower/devices/battery_BAT0" # Need to specify battery first to work.
+alias conf="cd ~/.config"
+alias sudo="doas"
+# Torrent aliases (transmission)
+alias t-list="transmission-remote -l"
+alias t-start="transmission-daemon"
+alias t-add="transmission-remote -a "
+
+# Enable syntax highlighting.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+
+
+
+
+
