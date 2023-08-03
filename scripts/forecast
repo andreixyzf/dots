@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# This script displays the weather report:
-
-weather="$(cat $HOME/.local/share/andrei/weatherreport)"
-terminal='st'
-
-$terminal $weather

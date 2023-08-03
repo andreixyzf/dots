@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# This script allows you to run any of your scripts from dmenu
-
-cd $HOME/.scripts
-ls -a $HOME/.scripts/ | dmenu | xargs -r sh

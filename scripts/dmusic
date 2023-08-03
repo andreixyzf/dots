@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Lets me chose what song I want to play from my music folder.
-
-TERM="st -f monospace:size=20"
-
-find $HOME/dl/music -name "*.mp3" -o -name "*.flac" -o -name "*.opus" -o -name "*.webm" -o -name "*.mp4" | dmenu -l 30 | xargs -r mpv --volume=60 --no-video
