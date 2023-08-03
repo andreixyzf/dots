@@ -14,6 +14,9 @@ set -o vi
 export EDITOR='vi'
 export VISUAL='vi'
 
+# Promt colors:
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
 # Set up promt and colors.
 HISTSIZE= HISTFILESIZE= # Infinite history.
 alias ls='ls --color=auto'
@@ -29,5 +32,3 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # Configure aliases
 source $HOME/.config/aliasrc
-export PAGER="most"
-export PAGER="less"
