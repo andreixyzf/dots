@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Increase key speed.
+xset r rate 300 50

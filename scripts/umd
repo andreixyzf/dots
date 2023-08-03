@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# This script unmounts drives.
+
+term='st -f monospace:size=16'
+
+drive=$(find /mnt -type d -maxdepth 3 2>/dev/null)
+mountpoint=$(echo "$drive" | dmenu -i -p "Select drive to unmount:")
+$term sudo umount -R $mountpoint

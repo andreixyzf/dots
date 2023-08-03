@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# This script sets the wallpaper using xwallpaper.
+# The current wallpaper will be put in the .config folder.
+# If run on an image it will set that as the wallpaper.
+
+[ -f "$1" ] && cp "$1" ~/.config/wall.png
+[ -d "$1" ] && cp "$(find "$1" -name "*.png" -o -name "*.jpg" -type f | shuf -n 1 )" ~/.config/wall.png
+
+# Load the current pywal theme if existent:
+wal -R
+
+# Load the wallpaper:
+xwallpaper --zoom ~/.config/wall.png # Set the wallpaper.

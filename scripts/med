@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# This script makes a dmenu promt for mounting encrypted drives.
+
+pgrep -x dmenu && exit
+
+term='st -f monospace:size=16'
+
+mountable=$( lsblk -lp | grep "part $" | awk '{print $1, "(" $4 ")"}')
+[[ "$mountable" = "" ]] && exit 1
+chosen=$(echo "$mountable" | dmenu -i -p "Which drive to mount?" | awk '{print $1}')
+[[ "$chosen" = "" ]] && exit 1
+$term sudo cryptsetup open $chosen drive
+
+dir=$(find /mnt -type d -maxdepth 3 2>/dev/null)
+mountpoint=$(echo "$dir" | dmenu -i -p "Select mount point:" )
+[[ "$mountpoint" = "" ]] && exit 1
+
+sudo mount /dev/mapper/drive $mountpoint
+$term ranger $mountpoint
