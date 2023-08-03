@@ -1,0 +1,6 @@
+#!/bin/sh
+# Set all of the paths:
+
+export PATH=$PATH:/home/andrew/.scripts
+export PATH=$PATH:/home/andrew/.scripts/dwm/
+export PATH=$PATH:/home/andrew/.local/bin/
