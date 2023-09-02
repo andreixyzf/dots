@@ -3,8 +3,7 @@
  " | | | \ V /| | | | | | | | | (__
  " |_| |_|\_/ |_|_| |_| |_|_|  \___|
 
- "
- " Set up basics.
+ " Basics:
    set bg=light
    syntax on
    set encoding=utf-8
@@ -28,11 +27,5 @@
  " Split screen at the bottom and right.
    set splitbelow splitright
 
-" Source zshrc file when modified and written:
-   autocmd BufWritePost *.zshrc,*.aliasrc !source ~/.config/zsh/.zshrc
-
- " Autocompile suckless software:
+ " Autocompile software:
     autocmd BufWritePost *.config.h,*.config.def.h !sudo make clean install
-
- " Auto compile groff documents in pdfs:
-   autocmd BufWritePost *Document.ms !groff -ms Document.ms -T pdf > Document.pdf
