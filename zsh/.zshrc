@@ -29,8 +29,8 @@ bindkey -v
 export KEYTIMEOUT=1
 
  # Keybinds:
-bindkey -s '^o' '^uranger\n' # Use Control-O To Open Ranger
-bindkey -s '^t' '^utremc\n' # Use Control-T To Open Transmission-Remote-Cli
+bindkey -s '^o' '^uranger\n' # Use Ctrl-O To Open Ranger
+bindkey -s '^t' '^utremc\n' # Use Ctrl-T To Open Transmission-Remote-Cli
 
  # Enable syntax highlighting.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
