@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # This file runs automatically with startx.
-# Set these things up first:
-xpath=~/.config/Xorg/.Xresources
+XDOTDIR='$HOME'
 
 # Programs that should start by default:
 slstatus & # Loads my status bar.
@@ -11,7 +10,7 @@ remap & # Remaping.
 setwal & # Set wallpaper and color scheme:
 transmission-daemon & # Transmision for torrents.
 unclutter -idle 3 & # Hides mouse cursor after 3 seconds.
-xrdb $xpath & # Load Xresources file.
+xrdb $XDOTDIR/.Xresources & # Load Xresources file.
 
 # Start dwm:
 exec dwm > ~/.cache/dwm
