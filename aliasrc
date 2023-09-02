@@ -1,18 +1,1 @@
-# This is where all of my aliasse are:
 
-# Basics:
-alias v="vim"
-alias grep="grep --color=auto"
-alias ls="ls --color=auto"
-
-# Directories & configs:
-alias cf="cd ~/.config"
-alias sc="cf ~/.scripts && ls -a"
-alias wm="cd ~/.config/src/suckless/dwm/ && ls -a"
-alias zc="vim ~/.config/zsh/.zshrc && source ~/.config/zsh/.zshrc"
-alias al="vim ~/.config/aliasrc && source ~/.config/aliasrc"
-
-# Pacman aliases:
-alias p="sudo pacman"
-alias ps="sudo pacman -S"
-alias pu="sudo pacman -Syu"
