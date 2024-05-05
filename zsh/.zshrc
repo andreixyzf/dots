@@ -9,7 +9,8 @@ stty stop undef
 setopt autocd
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1=" → %B%{$fg[magenta]%}%1d%  "
 
  # Autocomplete:
 autoload -U compinit
