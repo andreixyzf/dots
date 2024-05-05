@@ -6,8 +6,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use { "nvim-lua/completion-nvim" }
+  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use { "vim-scripts/AutoComplPop" }
 
-use { "ellisonleao/gruvbox.nvim" }
-use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-
-  end)
+end)
