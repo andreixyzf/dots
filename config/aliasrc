@@ -1,0 +1,26 @@
+#!/bin/sh
+
+alias \
+    cp="cp -iv" \
+    mv="mv -iv" \
+    rm="rm -iv" \
+    ls="ls -hN --color=auto --group-directories-first" \
+    grep="grep --color=auto" \
+    diff="diff --color=auto" \
+    vim="nvim"
+
+alias \
+    ll="ls -hN --color=auto --group-directories-first -l" \
+    ka="killlall" \
+    yt="yt-dlp" \
+    yta="yt-dlp -x --audio-format mp3" \
+    pl="pdflatex" \
+    nf="fastfetch" \
+    src="source "$ZDOTDIR/.zshrc"" \
+    tn="thunar . & disown" \
+
+alias \
+    cf="cd $XDG_CONFIG_HOME" \
+    al="$EDITOR $XDG_CONFIG_HOME/aliasrc" \
+    zcf="cd $ZDOTDIR/ && ls -al" \
+    sc="cd $HOME/.scripts/"

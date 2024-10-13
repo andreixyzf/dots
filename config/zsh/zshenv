@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+[ -f $XDG_CONFIG_HOME/env ] &&
+    source $XDG_CONFIG_HOME/env

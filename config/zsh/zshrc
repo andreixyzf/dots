@@ -1,0 +1,56 @@
+#  _______| |__  _ __ ___
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__
+# /___|___/_| |_|_|  \___|
+
+# Promt and colors:
+autoload -U colors && colors
+stty stop undef
+setopt autocd
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1=" → %B%{$fg[magenta]%}%1d%b%  "
+
+# Autocomplete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)
+# Use vim keys for the autocomplete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -v '^?' backward-delete-char
+
+# Vi mode:
+bindkey -v
+export KEYTIMEOUT=1
+
+# Ranger
+rgcd () {
+    [ -d "$HOME/.config/ranger/tmp" ] ||
+        mkdir --parents $HOME/.config/ranger/tmp
+
+    FILE="$HOME/.config/ranger/tmp/dir"
+    ranger --choosedir $FILE
+    dir=$(cat $FILE)
+
+    if [ -d $dir ]; then
+        cd $dir
+    fi
+    rm -rf $FILE > /dev/null
+}
+
+# Keybinds:
+bindkey -s '^v' '^uvim .\n'
+bindkey -s '^f' '^u~/.scripts/sessionizer \n'
+bindkey -s '^r' '^u~/.scripts/remap \n'
+bindkey -s '^o' '^urgcd \n'
+bindkey -s '^e' '^ufcd \n'
+
+[ -f "$HOME/.config/aliasrc" ] && source $HOME/.config/aliasrc
+
+# Enable syntax highlighting.
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
