@@ -27,7 +27,7 @@ vim.opt.background = "dark"
 vim.cmd("colorscheme default")
 
 function Colors(color)
-    color = color or "gruvbox"
+    color = color or "default"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
