@@ -42,7 +42,7 @@
 
 "" Colors
         set background=dark
-        colorscheme gruvbox
+        colorscheme retrobox
         set cursorline
         highlight clear SignColumn
         highlight CursorLineNr ctermfg=172 ctermbg=NONE guifg=#d79921 guibg=NONE
